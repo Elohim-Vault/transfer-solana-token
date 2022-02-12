@@ -15,7 +15,6 @@ import * as fs from 'fs';
     const receiverPublicKey = new PublicKey("9EYyX1rckbjhqhphngFHpnV1fUGfuCaCUobyZibWE1tX");
     const programKeypair = await createKeypairFromFile("./dist/program/transfersolana-keypair.json")
     const programId = programKeypair.publicKey;
-    console.log(programId.toString());
     const lamportsAmount = 100;
 
     const payer = Keypair.generate();
@@ -30,7 +29,7 @@ import * as fs from 'fs';
             { pubkey: SystemProgram.programId, isSigner: false, isWritable: false }
         ],
         programId,
-        data: Buffer.from([lamportsAmount]), // All instructions are hellos
+        data: Buffer.from([0, lamportsAmount]), // All instructions are hellos
     });
     const txId = await sendAndConfirmTransaction(
         connection,

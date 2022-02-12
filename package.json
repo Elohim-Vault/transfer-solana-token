@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node client/main.ts",
-    "build:program-rust": "cargo build-bpf --manifest-path=Cargo.toml --bpf-out-dir=dist/program"
+    "build": "cargo build-bpf --manifest-path=Cargo.toml --bpf-out-dir=dist/program",
+    "deploy": "solana program deploy ./dist/program/transfersolana.so"
   },
   "author": "",
   "license": "ISC",
