@@ -20,7 +20,7 @@ import * as fs from 'fs';
     const payer = Keypair.generate();
     await connection.requestAirdrop(
         payer.publicKey,
-        1 * LAMPORTS_PER_SOL,
+        1000000,
     );
     const instruction = new TransactionInstruction({
         keys: [
